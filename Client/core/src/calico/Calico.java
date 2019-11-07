@@ -183,6 +183,7 @@ public class Calico extends JFrame
 
 	public static void main(String[] args)
 	{
+		System.out.println("here we are");
 		/*
 		 * int pixel = (new Color(100,200,250)).getRGB(); int rp = (pixel & 0x00FF0000)>>16; int gp = (pixel &
 		 * 0x0000FF00)>>8; int bp = (pixel & 0x000000FF);
@@ -196,7 +197,7 @@ public class Calico extends JFrame
 		}
 
 		if (!CalicoOptions.webstart.isWebstart)
-			DOMConfigurator.configure(System.getProperty("log4j.configuration", "conf/log4j.xml"));
+			DOMConfigurator.configure(System.getProperty("log4j.properties", "conf/log4j.xml"));
 
 		// logger.debug("Color: "+rp+","+gp+","+bp);
 
@@ -547,7 +548,7 @@ public class Calico extends JFrame
 			}
 		});
 
-		JLabel label_username = new JLabel("Username:");
+		JLabel label_username = new JLabel("Usernamee:");
 		label_username.setPreferredSize(new Dimension(70, 20));
 
 		JLabel label_hostinfo = new JLabel("IP:");

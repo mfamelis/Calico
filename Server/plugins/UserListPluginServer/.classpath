@@ -25,7 +25,7 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/piccolo.jar"/>
 	<classpathentry kind="lib" path="lib/piccolox.jar"/>
-	<classpathentry kind="lib" path="lib/shodor.jar"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/git/Calico/Client/core/lib/shodor.jar"/>
 	<classpathentry kind="lib" path="lib/smack.jar"/>
 	<classpathentry kind="lib" path="lib/smackx-debug.jar"/>
 	<classpathentry kind="lib" path="lib/smackx-jingle.jar"/>

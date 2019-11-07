@@ -71,7 +71,9 @@ public class CalicoDataStore
 	public static long timeLastStressPacketSent = 0;
 	
 	public static String default_email = "";
-	
+
+	public static String lastOpenedDirectory = "";
+
 	
 	public static boolean enableHitachiStarboardFix = false;
 	
@@ -87,6 +89,7 @@ public class CalicoDataStore
 	public static float PenThickness = CalicoOptions.pen.stroke_size;
 	
 	public static Color LastDrawingColor = Color.BLACK;
+
 	public static Color PointingColor = Color.ORANGE;
 	
 	public static float LastDrawingThickness = CalicoOptions.pen.stroke_size;
@@ -103,7 +106,6 @@ public class CalicoDataStore
 	
 	public static Int2ObjectOpenHashMap<String> clientInfo = new Int2ObjectOpenHashMap<String>();
 	
-	public static String lastOpenedDirectory = "";
 	
 	public static class email {
 		public static String smtpHost = "smtp.gmail.com";

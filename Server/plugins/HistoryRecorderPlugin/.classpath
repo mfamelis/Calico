@@ -30,24 +30,25 @@
 	<classpathentry kind="lib" path="lib/httpcore-nio-4.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/httpmime-4.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/imap.jar"/>
-	<classpathentry kind="lib" path="lib/iText-5.0.6.jar"/>
-	<classpathentry kind="lib" path="lib/jpen-2-64.dll"/>
-	<classpathentry kind="lib" path="lib/jpen-2.dll"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Downloads/itext-5.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/jpen-2.jar"/>
 	<classpathentry kind="lib" path="lib/json.jar"/>
-	<classpathentry kind="lib" path="lib/libjpen-2.jnilib"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="lib/mail.jar"/>
 	<classpathentry kind="lib" path="lib/mailapi.jar"/>
 	<classpathentry kind="lib" path="lib/piccolo.jar"/>
 	<classpathentry kind="lib" path="lib/piccolox.jar"/>
 	<classpathentry kind="lib" path="lib/pop3.jar"/>
-	<classpathentry kind="lib" path="lib/shodor.jar"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/git/Calico/Client/core/lib/shodor.jar"/>
 	<classpathentry kind="lib" path="lib/smack.jar"/>
 	<classpathentry kind="lib" path="lib/smackx-debug.jar"/>
 	<classpathentry kind="lib" path="lib/smackx-jingle.jar"/>
 	<classpathentry kind="lib" path="lib/smackx.jar"/>
 	<classpathentry kind="lib" path="lib/smtp.jar"/>
 	<classpathentry kind="lib" path="lib/velocity-1.6.2-dep.jar"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Downloads/jpen-2-150301/jpen-2.jar"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Desktop/Calicotest/Client/plugins/UserListPluginClient/lib/jpen-2-64.dll"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Desktop/Calicotest/Client/plugins/UserListPluginClient/lib/libjpen-2.jnilib"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Desktop/Calicotest/Client/plugins/UserListPluginClient/lib/jpen-2.dll"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

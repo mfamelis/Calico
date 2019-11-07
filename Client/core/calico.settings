@@ -1,8 +1,8 @@
 #calico.settings
-#Sun Mar 04 16:09:42 PST 2012
+#Thu Nov 07 11:27:13 EST 2019
 resw=1200
 port=27000
-password=
+password=password
 resh=900
 host=localhost
-username=b
+username=bechir

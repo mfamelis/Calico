@@ -62,9 +62,9 @@ public class AddCanvasToPalette extends PaletteBarMenuItem {
 				new Runnable() { public void run() { 
 					Networking.ignoreConsistencyCheck = true;
 					final CGroup group = new CGroup(uuid, cuuid);
-					final Rectangle bounds = new Rectangle(0, 0, CalicoDataStore.serverScreenWidth, CalicoDataStore.serverScreenHeight);
+					final Rectangle bounds = new Rectangle(0, 0, CalicoDataStore.ScreenWidth, CalicoDataStore.ScreenWidth);
 					group.setShapeToRoundedRectangle(bounds, 0);
-					CGroupController.no_notify_start(uuid, cuuid, 0l, true, group);
+					CGroupController.no_notify_start(uuid, cuuid, 0l, true);
 					group.setPaint(Color.white);
 					CGroupController.setCurrentUUID(uuid);
 					CGroupController.no_notify_finish(uuid, true, false, false);

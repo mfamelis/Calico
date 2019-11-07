@@ -93,7 +93,7 @@ public class CalicoServer
 	public static void main(String[] args)
 	{
 		CalicoServer.args = args;
-		PropertyConfigurator.configure(System.getProperty("log4j.configuration","log4j.properties"));
+		PropertyConfigurator.configure(System.getProperty("log4j.configuration","conf/log4j.properties"));
 		
 		CalicoConfig.setup();
 		CalicoEventHandler.getInstance();
