@@ -154,6 +154,7 @@ public class CCanvas
 
 	public CCanvas(long uuid, int index)
 	{
+		
 		PLayer contentLayer = canvas.getCamera().removeLayer(0);
 		toolLayer.setParent(contentLayer.getParent());
 		canvas.getCamera().addLayer(Layer.WATERMARK.id, WATERMARK_PLACEHOLDER);

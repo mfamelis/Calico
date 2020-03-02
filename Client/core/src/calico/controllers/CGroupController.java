@@ -302,8 +302,7 @@ public class CGroupController
 		
 		groupdb.get(uuid).drawPermTemp(true);
 		
-		
-		
+		System.out.println(groupdb.get(uuid).getIsUncertain());
 		
 		//CCanvasController.canvasdb.get(cuid).repaint();
 	}
@@ -347,6 +346,7 @@ public class CGroupController
 		{
 			BubbleMenu.moveIconPositions(CGroupController.groupdb.get(uuid).getBounds());
 		}
+		System.out.println(groupdb.get(uuid).getIsUncertain());
 	}
 	
 	public static void no_notify_delete(final long uuid)
@@ -1194,6 +1194,7 @@ public class CGroupController
 	
 	public static void set_permanent(long uuid, boolean isperm)
 	{
+		
 		no_notify_set_permanent(uuid,isperm);
 		Networking.send(NetworkCommand.GROUP_SET_PERM, uuid, (isperm ? 1 : 0) );
 	}

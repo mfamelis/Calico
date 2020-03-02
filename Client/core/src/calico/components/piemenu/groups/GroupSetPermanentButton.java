@@ -34,6 +34,7 @@ import calico.Calico;
 import calico.components.CStroke;
 import calico.components.bubblemenu.BubbleMenu;
 import calico.components.piemenu.PieMenuButton;
+import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CGroupController;
 import calico.controllers.CStrokeController;
@@ -82,6 +83,7 @@ public class GroupSetPermanentButton extends PieMenuButton
 		Calico.logger.debug("CLICKED GROUP PERM BUTTON");
 		
 		isActive = false;
+		//CCalicoDbUdem.setup();
 	}
 	
 }

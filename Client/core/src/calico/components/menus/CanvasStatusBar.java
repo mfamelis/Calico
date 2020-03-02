@@ -52,6 +52,7 @@ import calico.components.menus.buttons.EmailButton;
 import calico.components.menus.buttons.ExitButton;
 import calico.components.menus.buttons.HistoryNavigationForwardButton;
 import calico.components.menus.buttons.ShowCanvasLinkButton;
+import calico.components.menus.buttons.UncertaintyButton;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.inputhandlers.InputEventInfo;
@@ -95,6 +96,9 @@ public class CanvasStatusBar extends CanvasGenericMenuBar
 		
 		addSpacer(ALIGN_END);
 		addIconRightAligned(new EmailButton(cuid));
+		
+		//addSpacer(ALIGN_END);
+		//addIconRightAligned(new UncertaintyButton(cuid));
 		
 		addSpacer(ALIGN_END);
 		addIconRightAligned(new ShowCanvasLinkButton(cuid));

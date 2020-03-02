@@ -48,6 +48,7 @@ import calico.CalicoOptions;
 import calico.components.CGroup;
 import calico.components.menus.ContextMenu;
 import calico.components.piemenu.PieMenuButton;
+import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;
@@ -176,6 +177,7 @@ public class BubbleMenu {
 		{
 			listener.menuDisplayed(ContextMenu.BUBBLE_MENU);
 		}
+		
 	}
 
 	//Makes the menu visible by adding it to the canvas
@@ -484,6 +486,13 @@ public class BubbleMenu {
 				 maxX = screenWidth - screenX - iconSize - farSideDistance - large - small;
 				 maxY = screenHeight - screenYBottom - iconSize - small - large; 
 			break;
+		case 13: x = (int)componentBounds.getMinX() - startX - centerOffset - small + 10;
+		 y = (int)componentBounds.getMaxY() + startY - centerOffset - large + 0;
+		 minX = screenX;
+		 minY = screenYTop + farSideDistance;
+		 maxX = screenWidth - screenX - iconSize - farSideDistance - large - small;
+		 maxY = screenHeight - screenYBottom - iconSize - small - large; 
+	break;
 		default: minX = x;
 				 maxX = x;
 				 minY = y;
@@ -718,6 +727,7 @@ public class BubbleMenu {
 			{
 				CGroupController.groupdb.get(uuid).highlight_on();
 				CGroupController.groupdb.get(uuid).highlight_repaint();
+				
 			}
 			else
 			{
@@ -777,6 +787,10 @@ public class BubbleMenu {
 			if (buttonClassname.compareTo("calico.components.piemenu.groups.GroupDeleteButton") == 0)
 			{
 				return 11;
+			}
+			if (buttonClassname.compareTo("calico.components.menus.buttons.UncertaintyButton") == 0)
+			{
+				return 13;
 			}
 			
 			//Palette Plugin Buttons

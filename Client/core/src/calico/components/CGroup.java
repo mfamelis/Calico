@@ -94,6 +94,7 @@ import calico.components.decorators.CGroupDecorator;
 import calico.components.piemenu.PieMenu;
 import calico.components.piemenu.PieMenuButton;
 import calico.controllers.CArrowController;
+import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;
@@ -168,6 +169,8 @@ public class CGroup extends PPath implements Serializable {
 
 	protected boolean isPermanent = false;
 	
+	protected boolean isUncertain = false;
+	
 	//This allows multiple groups to be highlighted at the same time
 	protected boolean isHighlighted = false;
 
@@ -239,13 +242,15 @@ public class CGroup extends PPath implements Serializable {
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupSetPermanentButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupShrinkToContentsButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.ListCreateButton.class);
-//		pieMenuButtons.add(calico.components.piemenu.groups.GroupMoveButton.class);
+//		pieMenuButtons.add(calico.components.menus.buttons.UncertaintyButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupCopyDragButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupRotateButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupResizeButton.class); //7
 		//pieMenuButtons.add(calico.components.piemenu.canvas.ArrowButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupDeleteButton.class);
+		pieMenuButtons.add(calico.components.menus.buttons.UncertaintyButton.class);
 		//pieMenuButtons.add(calico.components.piemenu.canvas.ImageCreate.class);
+
 		return pieMenuButtons;
 	}
 	
@@ -271,6 +276,9 @@ public class CGroup extends PPath implements Serializable {
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupTextButton.class); //10
 		//pieMenuButtons.add(calico.components.piemenu.canvas.ArrowButton.class); //9
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupDeleteButton.class); //11
+		pieMenuButtons.add(calico.components.menus.buttons.UncertaintyButton.class);
+
+
 		//pieMenuButtons.add(calico.components.piemenu.canvas.ImageCreate.class);
 		return pieMenuButtons;
 	}
@@ -282,6 +290,16 @@ public class CGroup extends PPath implements Serializable {
 	public double getRotation()
 	{
 		return rotation;
+	}
+	
+	public boolean getIsUncertain()
+	{
+		return this.isUncertain;
+	}
+	
+	public void changeIsUncertain()
+	{
+		 this.isUncertain = true;
 	}
 	
 	public double getScale()
@@ -1267,6 +1285,7 @@ public class CGroup extends PPath implements Serializable {
 	
 	public void setShapeToRoundedRectangle(Rectangle newBounds) {
 		setShapeToRoundedRectangle(newBounds, CalicoOptions.group.padding);
+		CCalicoDbUdem.getNodeEdges(uuid);
 	}
 	
 	public void setShapeToRoundedRectangle(Rectangle newBounds, int padding) {
@@ -2464,8 +2483,11 @@ public class CGroup extends PPath implements Serializable {
 	}
 	
 	public void highlight_on() {
+		
 		isHighlighted = true;
 		
+		
+		//System.out.println("here"+CGroupController.groupdb.get(75));
 		//BubbleMenu.activeGroup = this.uuid;
 		
 //		if (isPermanent)

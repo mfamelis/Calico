@@ -57,6 +57,7 @@ import calico.components.composable.ComposableElement;
 import calico.components.composable.ComposableElementController;
 import calico.components.composable.connectors.ArrowheadElement;
 import calico.components.composable.connectors.HighlightElement;
+import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;
@@ -519,8 +520,9 @@ public class CConnector extends PComposite implements Composable{
 	
 	
 	public void highlight_on() {
+		
 		isHighlighted = true;
-
+		//System.out.println(get_signature_debug_output());
 		redraw();
 	}
 	
@@ -528,6 +530,8 @@ public class CConnector extends PComposite implements Composable{
 		isHighlighted = false;
 
 		redraw();
+		CCalicoDbUdem.setup();
+		CCalicoDbUdem.getEdgeHeadTrail(this.uuid);
 	}
 	
 	public boolean isHighlighted()
@@ -695,14 +699,16 @@ public class CConnector extends PComposite implements Composable{
 	public int get_signature() {
 
 		int sig = (int) (this.orthogonalDistance.length + pointHead.x + pointHead.y + anchorTailUUID);
-
+		
+		
 //		System.out.println("Debug sig for group " + uuid + ": " + sig + ", 1) " + this.points.npoints + ", 2) " + isPermanent() + ", 3) " + this.points.xpoints[0] + ", 4) " + this.points.xpoints[0] + ", 5) " + this.points.ypoints[0] + ", 6) " + (int)(this.rotation*10) + ", 7) " + (int)(this.scaleX*10) + ", 8) " + (int)(this.scaleY*10));
 		return sig;
 	}
 	
 	public String get_signature_debug_output()
 	{
-		return "Debug sig for connector " + uuid + ": 1) " +this.orthogonalDistance.length + ", 2) " + pointHead.x + ", 3) " + pointHead.y + ", 4) " + anchorTailUUID;
+		System.out.print("testtttttt");
+		return "Debug sig for connector " + uuid + ": 1) " +this.orthogonalDistance.length + ", 2) " + pointHead.x + ", 3) " + pointHead.y + ", anchorTailUUID) " + anchorTailUUID +"anchorHeadUUID)"+ anchorHeadUUID;
 	}	
 
 
