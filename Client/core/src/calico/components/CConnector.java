@@ -707,9 +707,14 @@ public class CConnector extends PComposite implements Composable{
 	
 	public String get_signature_debug_output()
 	{
-		System.out.print("testtttttt");
 		return "Debug sig for connector " + uuid + ": 1) " +this.orthogonalDistance.length + ", 2) " + pointHead.x + ", 3) " + pointHead.y + ", anchorTailUUID) " + anchorTailUUID +"anchorHeadUUID)"+ anchorHeadUUID;
-	}	
+	}
+	
+	public String get_headAndTrail()
+	{
+		System.out.print("testtttttt");
+		return "AnchorTailUUID) " + anchorTailUUID +" AnchorHeadUUID) "+ anchorHeadUUID;
+	}
 
 
 	@Override

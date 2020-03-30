@@ -529,6 +529,7 @@ public class CalicoInputManager
 				{
 					CCalicoDbUdem.setup();
 					
+					
 					BubbleMenu.handleButtonInput(ev.getGlobalPoint(), ev);
 				}
 				lockInputHandler = 0l;

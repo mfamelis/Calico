@@ -815,6 +815,8 @@ public class CListDecorator extends CGroupDecorator {
 		pieMenuButtons.add(calico.components.piemenu.canvas.ArrowButton.class);
 		pieMenuButtons.add(calico.components.piemenu.groups.GroupDeleteButton.class);
 		pieMenuButtons.add(calico.components.menus.buttons.UncertaintyButton.class);
+//		pieMenuButtons.add(calico.components.piemenu.canvas.TextCreate.class);
+		pieMenuButtons.add(calico.components.piemenu.PieMenuButton.class);
 		return pieMenuButtons;
 	}
 	
