@@ -3,9 +3,10 @@
 package Database.impl;
 
 import Database.*;
-
+import calico.components.CCanvas;
 import calico.components.CConnector;
 import calico.components.CGroup;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -60,7 +61,9 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case DatabasePackage.NODE: return createNode();
+			case DatabasePackage.CALICO_LOGICAL_MODEL: return createCalicoLogicalModel();
 			case DatabasePackage.EDGE: return createEdge();
+			case DatabasePackage.CANVAS: return createCanvas();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,6 +81,8 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 				return createCGroupFromString(eDataType, initialValue);
 			case DatabasePackage.CCONNECTOR:
 				return createCConnectorFromString(eDataType, initialValue);
+			case DatabasePackage.CCANVAS:
+				return createCCanvasFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +100,8 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 				return convertCGroupToString(eDataType, instanceValue);
 			case DatabasePackage.CCONNECTOR:
 				return convertCConnectorToString(eDataType, instanceValue);
+			case DatabasePackage.CCANVAS:
+				return convertCCanvasToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -117,9 +124,31 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * @generated
 	 */
 	@Override
+	public CalicoLogicalModel createCalicoLogicalModel() {
+		CalicoLogicalModelImpl calicoLogicalModel = new CalicoLogicalModelImpl();
+		return calicoLogicalModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Edge createEdge() {
 		EdgeImpl edge = new EdgeImpl();
 		return edge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Canvas createCanvas() {
+		CanvasImpl canvas = new CanvasImpl();
+		return canvas;
 	}
 
 	/**
@@ -155,6 +184,24 @@ public class DatabaseFactoryImpl extends EFactoryImpl implements DatabaseFactory
 	 * @generated
 	 */
 	public String convertCConnectorToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CCanvas createCCanvasFromString(EDataType eDataType, String initialValue) {
+		return (CCanvas)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCCanvasToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

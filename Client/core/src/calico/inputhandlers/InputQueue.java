@@ -29,8 +29,8 @@ package calico.inputhandlers;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
+import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
 import calico.*;
-import calico.controllers.CCalicoDbUdem;
 import calico.modules.ErrorMessage;
 
 

@@ -31,6 +31,15 @@ public interface DatabaseFactory extends EFactory {
 	Node createNode();
 
 	/**
+	 * Returns a new object of class '<em>Calico Logical Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Calico Logical Model</em>'.
+	 * @generated
+	 */
+	CalicoLogicalModel createCalicoLogicalModel();
+
+	/**
 	 * Returns a new object of class '<em>Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +47,15 @@ public interface DatabaseFactory extends EFactory {
 	 * @generated
 	 */
 	Edge createEdge();
+
+	/**
+	 * Returns a new object of class '<em>Canvas</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Canvas</em>'.
+	 * @generated
+	 */
+	Canvas createCanvas();
 
 	/**
 	 * Returns the package supported by this factory.

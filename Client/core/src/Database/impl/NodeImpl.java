@@ -6,11 +6,14 @@ import Database.DatabasePackage;
 import Database.Node;
 
 import calico.components.CGroup;
+
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,31 +23,31 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Database.impl.NodeImpl#getGroupe <em>Groupe</em>}</li>
+ *   <li>{@link Database.impl.NodeImpl#getNode <em>Node</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
+public class NodeImpl extends NamedElementImpl implements Node {
 	/**
-	 * The default value of the '{@link #getGroupe() <em>Groupe</em>}' attribute.
+	 * The default value of the '{@link #getNode() <em>Node</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGroupe()
+	 * @see #getNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final CGroup GROUPE_EDEFAULT = null;
+	protected static final CGroup NODE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getGroupe() <em>Groupe</em>}' attribute.
+	 * The cached value of the '{@link #getNode() <em>Node</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGroupe()
+	 * @see #getNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected CGroup groupe = GROUPE_EDEFAULT;
+	protected CGroup node = NODE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +74,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public CGroup getGroupe() {
-		return groupe;
+	public CGroup getNode() {
+		return node;
 	}
 
 	/**
@@ -81,11 +84,23 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * @generated
 	 */
 	@Override
-	public void setGroupe(CGroup newGroupe) {
-		CGroup oldGroupe = groupe;
-		groupe = newGroupe;
+	public void setNode(CGroup newNode) {
+		CGroup oldNode = node;
+		node = newNode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DatabasePackage.NODE__GROUPE, oldGroupe, groupe));
+			eNotify(new ENotificationImpl(this, Notification.SET, DatabasePackage.NODE__NODE, oldNode, node));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toAlloySpec() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -96,8 +111,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DatabasePackage.NODE__GROUPE:
-				return getGroupe();
+			case DatabasePackage.NODE__NODE:
+				return getNode();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,12 +122,11 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DatabasePackage.NODE__GROUPE:
-				setGroupe((CGroup)newValue);
+			case DatabasePackage.NODE__NODE:
+				setNode((CGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +140,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DatabasePackage.NODE__GROUPE:
-				setGroupe(GROUPE_EDEFAULT);
+			case DatabasePackage.NODE__NODE:
+				setNode(NODE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,10 +155,24 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DatabasePackage.NODE__GROUPE:
-				return GROUPE_EDEFAULT == null ? groupe != null : !GROUPE_EDEFAULT.equals(groupe);
+			case DatabasePackage.NODE__NODE:
+				return NODE_EDEFAULT == null ? node != null : !NODE_EDEFAULT.equals(node);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case DatabasePackage.NODE___TO_ALLOY_SPEC:
+				return toAlloySpec();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -157,8 +185,8 @@ public class NodeImpl extends MinimalEObjectImpl.Container implements Node {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (groupe: ");
-		result.append(groupe);
+		result.append(" (node: ");
+		result.append(node);
 		result.append(')');
 		return result.toString();
 	}

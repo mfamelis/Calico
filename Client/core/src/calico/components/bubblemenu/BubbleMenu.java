@@ -42,13 +42,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 
+import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
 import calico.CalicoDataStore;
 import calico.CalicoDraw;
 import calico.CalicoOptions;
 import calico.components.CGroup;
 import calico.components.menus.ContextMenu;
 import calico.components.piemenu.PieMenuButton;
-import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;
@@ -881,6 +881,10 @@ public class BubbleMenu {
 			if (buttonClassname.compareTo("calico.components.bubblemenu.connectors.ConnectorMoveHeadButton") == 0)
 			{
 				return 0;
+			}
+			if (buttonClassname.compareTo("calico.components.bubblemenu.connectors.ConnectorCheckUncertainty") == 0)
+			{
+				return 3;
 			}
 			
 			return 0;

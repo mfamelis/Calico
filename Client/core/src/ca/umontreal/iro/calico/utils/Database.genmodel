@@ -8,11 +8,32 @@
   <genPackages prefix="Database" disposableProviderFactory="true" ecorePackage="Database.ecore#/">
     <genDataTypes ecoreDataType="Database.ecore#//CGroup"/>
     <genDataTypes ecoreDataType="Database.ecore#//CConnector"/>
+    <genDataTypes ecoreDataType="Database.ecore#//CCanvas"/>
     <genClasses ecoreClass="Database.ecore#//Node">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Node/groupe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Node/node"/>
+      <genOperations ecoreOperation="Database.ecore#//Node/toAlloySpec"/>
+    </genClasses>
+    <genClasses ecoreClass="Database.ecore#//CalicoLogicalModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/node"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/edge"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/canvas"/>
+      <genOperations ecoreOperation="Database.ecore#//CalicoLogicalModel/toAlloyModel"/>
     </genClasses>
     <genClasses ecoreClass="Database.ecore#//Edge">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Edge/connector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Edge/edge"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Database.ecore#//Edge/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Database.ecore#//Edge/src"/>
+      <genOperations ecoreOperation="Database.ecore#//Edge/toAlloySpec"/>
+      <genOperations ecoreOperation="Database.ecore#//Edge/getUUID"/>
+    </genClasses>
+    <genClasses ecoreClass="Database.ecore#//Canvas">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Canvas/cCanvas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//Canvas/node"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//Canvas/edge"/>
+      <genOperations ecoreOperation="Database.ecore#//Canvas/toAlloySpec"/>
+    </genClasses>
+    <genClasses ecoreClass="Database.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//NamedElement/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

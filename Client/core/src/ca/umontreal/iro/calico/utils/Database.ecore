@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Database" nsURI="http://exemple.com" nsPrefix="Database">
-  <eClassifiers xsi:type="ecore:EClass" name="Node">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupe" eType="#//CGroup"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="CGroup" instanceClassName="calico.components.CGroup"/>
   <eClassifiers xsi:type="ecore:EDataType" name="CConnector" instanceClassName="calico.components.CConnector"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Edge">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connector" eType="#//CConnector"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="CCanvas" instanceClassName="calico.components.CCanvas"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//NamedElement">
+    <eOperations name="toAlloySpec" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="node" eType="#//CGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CalicoLogicalModel">
+    <eOperations name="toAlloyModel" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="#//Node"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="#//Edge"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="canvas" upperBound="-1"
+        eType="#//Canvas" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//NamedElement">
+    <eOperations name="toAlloySpec" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eOperations name="getUUID" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edge" eType="#//CConnector"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Canvas" eSuperTypes="#//NamedElement">
+    <eOperations name="toAlloySpec" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cCanvas" eType="#//CCanvas"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="#//Node"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="#//Edge"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
   </eClassifiers>
 </ecore:EPackage>

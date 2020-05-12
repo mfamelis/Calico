@@ -83,6 +83,7 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
 
+import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
 import calico.Calico;
 import calico.CalicoDraw;
 import calico.CalicoOptions;
@@ -94,7 +95,6 @@ import calico.components.decorators.CGroupDecorator;
 import calico.components.piemenu.PieMenu;
 import calico.components.piemenu.PieMenuButton;
 import calico.controllers.CArrowController;
-import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;

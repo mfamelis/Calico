@@ -3,7 +3,6 @@
 package Database;
 
 import calico.components.CConnector;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,34 +13,97 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Database.Edge#getConnector <em>Connector</em>}</li>
+ *   <li>{@link Database.Edge#getEdge <em>Edge</em>}</li>
+ *   <li>{@link Database.Edge#getTarget <em>Target</em>}</li>
+ *   <li>{@link Database.Edge#getSrc <em>Src</em>}</li>
  * </ul>
  *
  * @see Database.DatabasePackage#getEdge()
  * @model
  * @generated
  */
-public interface Edge extends EObject {
+public interface Edge extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Connector</b></em>' attribute.
+	 * Returns the value of the '<em><b>Edge</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connector</em>' attribute.
-	 * @see #setConnector(CConnector)
-	 * @see Database.DatabasePackage#getEdge_Connector()
-	 * @model dataType="Database.CConnector"
+	 * @return the value of the '<em>Edge</em>' attribute.
+	 * @see #setEdge(CConnector)
+	 * @see Database.DatabasePackage#getEdge_Edge()
+	 * @model default="" dataType="Database.CConnector"
 	 * @generated
 	 */
-	CConnector getConnector();
+	CConnector getEdge();
 
 	/**
-	 * Sets the value of the '{@link Database.Edge#getConnector <em>Connector</em>}' attribute.
+	 * Sets the value of the '{@link Database.Edge#getEdge <em>Edge</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connector</em>' attribute.
-	 * @see #getConnector()
+	 * @param value the new value of the '<em>Edge</em>' attribute.
+	 * @see #getEdge()
 	 * @generated
 	 */
-	void setConnector(CConnector value);
+	void setEdge(CConnector value);
+
+	/**
+	 * Returns the value of the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target</em>' reference.
+	 * @see #setTarget(Node)
+	 * @see Database.DatabasePackage#getEdge_Target()
+	 * @model required="true"
+	 * @generated
+	 */
+	Node getTarget();
+
+	/**
+	 * Sets the value of the '{@link Database.Edge#getTarget <em>Target</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target</em>' reference.
+	 * @see #getTarget()
+	 * @generated
+	 */
+	void setTarget(Node value);
+
+	/**
+	 * Returns the value of the '<em><b>Src</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Src</em>' reference.
+	 * @see #setSrc(Node)
+	 * @see Database.DatabasePackage#getEdge_Src()
+	 * @model required="true"
+	 * @generated
+	 */
+	Node getSrc();
+
+	/**
+	 * Sets the value of the '{@link Database.Edge#getSrc <em>Src</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Src</em>' reference.
+	 * @see #getSrc()
+	 * @generated
+	 */
+	void setSrc(Node value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.String" required="true"
+	 * @generated
+	 */
+	String toAlloySpec();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation" dataType="org.eclipse.emf.ecore.xml.type.Long" required="true"
+	 * @generated
+	 */
+	long getUUID();
 
 } // Edge

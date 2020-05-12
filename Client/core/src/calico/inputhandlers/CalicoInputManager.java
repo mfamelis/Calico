@@ -54,6 +54,7 @@ import javax.swing.SwingUtilities;
 
 import org.apache.log4j.Logger;
 
+import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
 import edu.umd.cs.piccolo.PNode;
 import edu.umd.cs.piccolo.nodes.PImage;
 
@@ -527,7 +528,7 @@ public class CalicoInputManager
 			{
 				if(ev.getAction()==InputEventInfo.ACTION_RELEASED || ev.getAction()==InputEventInfo.ACTION_DRAGGED)
 				{
-					CCalicoDbUdem.setup();
+					//CCalicoDbUdem.setup();
 					
 					
 					BubbleMenu.handleButtonInput(ev.getGlobalPoint(), ev);

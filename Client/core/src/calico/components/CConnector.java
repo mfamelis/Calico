@@ -49,6 +49,7 @@ import javax.swing.SwingUtilities;
 
 import org.apache.log4j.Logger;
 
+import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
 import calico.Calico;
 import calico.CalicoDraw;
 import calico.CalicoOptions;
@@ -57,7 +58,6 @@ import calico.components.composable.ComposableElement;
 import calico.components.composable.ComposableElementController;
 import calico.components.composable.connectors.ArrowheadElement;
 import calico.components.composable.connectors.HighlightElement;
-import calico.controllers.CCalicoDbUdem;
 import calico.controllers.CCanvasController;
 import calico.controllers.CConnectorController;
 import calico.controllers.CGroupController;
@@ -530,8 +530,8 @@ public class CConnector extends PComposite implements Composable{
 		isHighlighted = false;
 
 		redraw();
-		CCalicoDbUdem.setup();
-		CCalicoDbUdem.getEdgeHeadTrail(this.uuid);
+		//CCalicoDbUdem.setup();
+		//CCalicoDbUdem.getEdgeHeadTrail(this.uuid);
 	}
 	
 	public boolean isHighlighted()
@@ -693,6 +693,7 @@ public class CConnector extends PComposite implements Composable{
 		bubbleMenuButtons.add(calico.components.bubblemenu.connectors.ConnectorMakeStrokeButton.class);
 		bubbleMenuButtons.add(calico.components.bubblemenu.connectors.ConnectorMoveHeadButton.class);
 		bubbleMenuButtons.add(calico.components.bubblemenu.connectors.ConnectorMoveTailButton.class);
+		bubbleMenuButtons.add(calico.components.bubblemenu.connectors.ConnectorCheckUncertainty.class);
 		return bubbleMenuButtons;
 	}
 	
