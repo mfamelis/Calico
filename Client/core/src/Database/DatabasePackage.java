@@ -161,31 +161,13 @@ public interface DatabasePackage extends EPackage {
 	int CALICO_LOGICAL_MODEL = 1;
 
 	/**
-	 * The feature id for the '<em><b>Node</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALICO_LOGICAL_MODEL__NODE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Edge</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALICO_LOGICAL_MODEL__EDGE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Canvas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALICO_LOGICAL_MODEL__CANVAS = 2;
+	int CALICO_LOGICAL_MODEL__CANVAS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Calico Logical Model</em>' class.
@@ -194,7 +176,7 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CALICO_LOGICAL_MODEL_FEATURE_COUNT = 3;
+	int CALICO_LOGICAL_MODEL_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>To Alloy Model</em>' operation.
@@ -440,28 +422,6 @@ public interface DatabasePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCalicoLogicalModel();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Database.CalicoLogicalModel#getNode <em>Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Node</em>'.
-	 * @see Database.CalicoLogicalModel#getNode()
-	 * @see #getCalicoLogicalModel()
-	 * @generated
-	 */
-	EReference getCalicoLogicalModel_Node();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Database.CalicoLogicalModel#getEdge <em>Edge</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Edge</em>'.
-	 * @see Database.CalicoLogicalModel#getEdge()
-	 * @see #getCalicoLogicalModel()
-	 * @generated
-	 */
-	EReference getCalicoLogicalModel_Edge();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link Database.CalicoLogicalModel#getCanvas <em>Canvas</em>}'.
@@ -712,22 +672,6 @@ public interface DatabasePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CALICO_LOGICAL_MODEL = eINSTANCE.getCalicoLogicalModel();
-
-		/**
-		 * The meta object literal for the '<em><b>Node</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CALICO_LOGICAL_MODEL__NODE = eINSTANCE.getCalicoLogicalModel_Node();
-
-		/**
-		 * The meta object literal for the '<em><b>Edge</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CALICO_LOGICAL_MODEL__EDGE = eINSTANCE.getCalicoLogicalModel_Edge();
 
 		/**
 		 * The meta object literal for the '<em><b>Canvas</b></em>' containment reference list feature.

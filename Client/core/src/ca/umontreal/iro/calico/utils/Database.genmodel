@@ -14,8 +14,6 @@
       <genOperations ecoreOperation="Database.ecore#//Node/toAlloySpec"/>
     </genClasses>
     <genClasses ecoreClass="Database.ecore#//CalicoLogicalModel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/node"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/edge"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/canvas"/>
       <genOperations ecoreOperation="Database.ecore#//CalicoLogicalModel/toAlloyModel"/>
     </genClasses>

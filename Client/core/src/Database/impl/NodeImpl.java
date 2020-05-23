@@ -6,6 +6,7 @@ import Database.DatabasePackage;
 import Database.Node;
 
 import calico.components.CGroup;
+import calico.controllers.CGroupController;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
@@ -189,6 +190,17 @@ public class NodeImpl extends NamedElementImpl implements Node {
 		result.append(node);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public CGroup getNodeFromUUID(long nodeUUID) {
+		for(CGroup g: CGroupController.groupdb.values())
+		{
+			
+			if(g.getUUID() == nodeUUID)
+				return g;
+		}
+		return null;
 	}
 
 } //NodeImpl

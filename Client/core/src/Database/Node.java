@@ -42,6 +42,8 @@ public interface Node extends NamedElement {
 	 * @generated
 	 */
 	void setNode(CGroup value);
+	
+	CGroup getNodeFromUUID(long nodeUUID);
 
 	/**
 	 * <!-- begin-user-doc -->

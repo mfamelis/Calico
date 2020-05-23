@@ -1579,4 +1579,8 @@ public class CCanvas
 			}
 		}
 	}
+	public long getUUID()
+	{
+		return this.uuid;
+	}
 }//CCanvas

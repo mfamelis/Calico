@@ -197,28 +197,8 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCalicoLogicalModel_Node() {
-		return (EReference)calicoLogicalModelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCalicoLogicalModel_Edge() {
-		return (EReference)calicoLogicalModelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getCalicoLogicalModel_Canvas() {
-		return (EReference)calicoLogicalModelEClass.getEStructuralFeatures().get(2);
+		return (EReference)calicoLogicalModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -425,8 +405,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		createEOperation(nodeEClass, NODE___TO_ALLOY_SPEC);
 
 		calicoLogicalModelEClass = createEClass(CALICO_LOGICAL_MODEL);
-		createEReference(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL__NODE);
-		createEReference(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL__EDGE);
 		createEReference(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL__CANVAS);
 		createEOperation(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL___TO_ALLOY_MODEL);
 
@@ -494,8 +472,6 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		initEOperation(getNode__ToAlloySpec(), theXMLTypePackage.getString(), "toAlloySpec", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(calicoLogicalModelEClass, CalicoLogicalModel.class, "CalicoLogicalModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCalicoLogicalModel_Node(), this.getNode(), null, "node", null, 0, -1, CalicoLogicalModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCalicoLogicalModel_Edge(), this.getEdge(), null, "edge", null, 0, -1, CalicoLogicalModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCalicoLogicalModel_Canvas(), this.getCanvas(), null, "canvas", null, 0, -1, CalicoLogicalModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getCalicoLogicalModel__ToAlloyModel(), theXMLTypePackage.getString(), "toAlloyModel", 1, 1, IS_UNIQUE, IS_ORDERED);

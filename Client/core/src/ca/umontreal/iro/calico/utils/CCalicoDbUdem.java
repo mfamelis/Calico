@@ -2,6 +2,7 @@ package ca.umontreal.iro.calico.utils;
 
 import org.apache.log4j.Logger;
 
+import com.sun.org.apache.xerces.internal.dom.NodeImpl;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import Database.CalicoLogicalModel;
@@ -32,7 +33,7 @@ public class CCalicoDbUdem {
 	
 	public static CalicoLogicalModel clm = DatabaseFactory.eINSTANCE.createCalicoLogicalModel();
 	
-	public static Edge selectedEdge = DatabaseFactory.eINSTANCE.createEdge();
+	//public static Edge selectedEdge = DatabaseFactory.eINSTANCE.createEdge();
 	
 	public static Long headNodeUUID = 0L;
 	public static Long trailNodeUUID = 0L;
@@ -43,51 +44,68 @@ public class CCalicoDbUdem {
 	
 	public static void setup()
 	{
-
-		clm.getEdge().clear();
 		clm.getCanvas().clear();
-		clm.getNode().clear();
-		
 		//////////////////////////////////////////////////
-		for(CGroup g: CGroupController.groupdb.values())
-		{
-			
-			Node node = DatabaseFactory.eINSTANCE.createNode();
-			node.setNode(g); 
-			clm.getNode().add(node);
-		}
-		
-		for(CConnector c: CConnectorController.connectors.values())
-		{
-			
-			Edge edge = DatabaseFactory.eINSTANCE.createEdge();
-			edge.setEdge(c); 
-			clm.getEdge().add(edge);
-		}
 		
 		for(CCanvas ca: CCanvasController.canvasdb.values())
 		{
 			
 			Canvas canvas = DatabaseFactory.eINSTANCE.createCanvas();
-			canvas.setCCanvas(ca); 
-			clm.getCanvas().add(canvas);
+			canvas.setCCanvas(ca);
 			
+			/*for(Edge edge: clm.getEdge())
+			{
+				
+				if(edge.getEdge().getCanvasUUID() == canvas.getCCanvas().getUUID())
+					canvas.getEdge().add(edge);
+					System.out.print("hhhhhhh");
+			}*/
+			for(CGroup g: CGroupController.groupdb.values())
+			{
+				
+				Node node = DatabaseFactory.eINSTANCE.createNode();
+				node.setNode(g); 
+				
+					
+					if(node.getNode().getCanvasUID() == canvas.getCCanvas().getUUID())
+						{
+							canvas.getNode().add(node);
+							System.out.println(canvas.getNode()+"node added");
+						}
+				
+			}
+			for(CConnector c: CConnectorController.connectors.values())
+			{
+				
+				Edge edge = DatabaseFactory.eINSTANCE.createEdge();
+				edge.setEdge(c);
+				for(Node node: canvas.getNode())
+				{
+					
+					if(node.getNode().getUUID() == edge.getEdge().getAnchorUUID(1))
+						edge.setTarget(node);
+					else if (node.getNode().getUUID() == edge.getEdge().getAnchorUUID(2))
+						edge.setSrc(node);	
+				}
+				
+				if(edge.getEdge().getCanvasUUID() == canvas.getCCanvas().getUUID())
+					{
+						canvas.getEdge().add(edge);
+						System.out.print(canvas.getEdge());
+						System.out.print("edge added");
+					}
+				
+			
+			}
+			clm.getCanvas().add(canvas);
 		}
-		System.out.println(clm);
 		
+		System.out.println(clm);
 		
 	}
 	
 	public static void getNodesForEdge(long EdgeUUID) {
-		for(Edge edge: clm.getEdge())
-		{
-			if(edge.getEdge().getUUID() == EdgeUUID)
-			{
-				headNodeUUID = edge.getEdge().getAnchorUUID(1);
-				trailNodeUUID = edge.getEdge().getAnchorUUID(2);
-				System.out.println("Done");
-			}
-		}
+		return;
 	}
 	
 	public static long[] getGraphNodes(long graphUuid)
