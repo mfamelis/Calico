@@ -1,6 +1,6 @@
 /**
  */
-package ca.umontreal.iro.calico.Database;
+package Database;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ca.umontreal.iro.calico.Database.CalicoLogicalModel#getCanvas <em>Canvas</em>}</li>
+ *   <li>{@link Database.CalicoLogicalModel#getCanvas <em>Canvas</em>}</li>
  * </ul>
  *
- * @see ca.umontreal.iro.calico.Database.DatabasePackage#getCalicoLogicalModel()
+ * @see Database.DatabasePackage#getCalicoLogicalModel()
  * @model
  * @generated
  */
 public interface CalicoLogicalModel extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Canvas</b></em>' containment reference list.
-	 * The list contents are of type {@link ca.umontreal.iro.calico.Database.Canvas}.
+	 * The list contents are of type {@link Database.Canvas}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Canvas</em>' containment reference list.
-	 * @see ca.umontreal.iro.calico.Database.DatabasePackage#getCalicoLogicalModel_Canvas()
+	 * @see Database.DatabasePackage#getCalicoLogicalModel_Canvas()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -42,12 +42,5 @@ public interface CalicoLogicalModel extends EObject {
 	 * @generated
 	 */
 	String toAlloyModel();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation"
-	 */
-	Canvas getCurrentCanvas(CalicoLogicalModel clm, float canvasUUID);
 
 } // CalicoLogicalModel

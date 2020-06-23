@@ -1,10 +1,10 @@
 /**
  */
-package ca.umontreal.iro.calico.Database.impl;
+package Database.impl;
 
-import ca.umontreal.iro.calico.Database.CalicoLogicalModel;
-import ca.umontreal.iro.calico.Database.Canvas;
-import ca.umontreal.iro.calico.Database.DatabasePackage;
+import Database.CalicoLogicalModel;
+import Database.Canvas;
+import Database.DatabasePackage;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ca.umontreal.iro.calico.Database.impl.CalicoLogicalModelImpl#getCanvas <em>Canvas</em>}</li>
+ *   <li>{@link Database.impl.CalicoLogicalModelImpl#getCanvas <em>Canvas</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,27 +80,13 @@ public class CalicoLogicalModelImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toAlloyModel() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	@Override
-	public Canvas getCurrentCanvas(CalicoLogicalModel clm, float canvasUUID) {
-		for(Canvas c: clm.getCanvas())
-		{
-			if(c.getCCanvas().getUUID() == canvasUUID)
-				return c;
-		}
-		return null;
 	}
 
 	/**
@@ -187,9 +173,6 @@ public class CalicoLogicalModelImpl extends MinimalEObjectImpl.Container impleme
 		switch (operationID) {
 			case DatabasePackage.CALICO_LOGICAL_MODEL___TO_ALLOY_MODEL:
 				return toAlloyModel();
-			case DatabasePackage.CALICO_LOGICAL_MODEL___GET_CURRENT_CANVAS:
-				return getCurrentCanvas(null, operationID);
-				
 		}
 		return super.eInvoke(operationID, arguments);
 	}
