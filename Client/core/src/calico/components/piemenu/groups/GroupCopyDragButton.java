@@ -32,6 +32,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
+import java.io.FileNotFoundException;
 
 import calico.Calico;
 import calico.components.CCanvas;
@@ -46,6 +47,7 @@ import calico.inputhandlers.InputEventInfo;
 import calico.networking.Networking;
 import calico.networking.netstuff.CalicoPacket;
 import calico.networking.netstuff.NetworkCommand;
+import edu.mit.csail.sdg.alloy4.Err;
 import edu.umd.cs.piccolo.nodes.PImage;
 
 public class GroupCopyDragButton extends PieMenuButton
@@ -151,7 +153,7 @@ public class GroupCopyDragButton extends PieMenuButton
 		ev.stop();
 	}
 	
-	public void onReleased(InputEventInfo ev)
+	public void onReleased(InputEventInfo ev) throws FileNotFoundException, Err
 	{
 		if (BubbleMenu.highlightedParentGroup != 0l)
 		{

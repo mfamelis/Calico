@@ -188,13 +188,22 @@ public interface DatabasePackage extends EPackage {
 	int CALICO_LOGICAL_MODEL___TO_ALLOY_MODEL = 0;
 
 	/**
+	 * The operation id for the '<em>Get Current Canvas</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALICO_LOGICAL_MODEL___GET_CURRENT_CANVAS = 1;
+
+	/**
 	 * The number of operations of the '<em>Calico Logical Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CALICO_LOGICAL_MODEL_OPERATION_COUNT = 1;
+	int CALICO_LOGICAL_MODEL_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link ca.umontreal.iro.calico.Database.impl.EdgeImpl <em>Edge</em>}' class.
@@ -445,6 +454,16 @@ public interface DatabasePackage extends EPackage {
 	EOperation getCalicoLogicalModel__ToAlloyModel();
 
 	/**
+	 * Returns the meta object for the '{@link ca.umontreal.iro.calico.Database.CalicoLogicalModel#getCurrentCanvas() <em>Get Current Canvas</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Current Canvas</em>' operation.
+	 * @see ca.umontreal.iro.calico.Database.CalicoLogicalModel#getCurrentCanvas()
+	 * @generated
+	 */
+	EOperation getCalicoLogicalModel__GetCurrentCanvas();
+
+	/**
 	 * Returns the meta object for class '{@link ca.umontreal.iro.calico.Database.Edge <em>Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -688,6 +707,14 @@ public interface DatabasePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CALICO_LOGICAL_MODEL___TO_ALLOY_MODEL = eINSTANCE.getCalicoLogicalModel__ToAlloyModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Current Canvas</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CALICO_LOGICAL_MODEL___GET_CURRENT_CANVAS = eINSTANCE.getCalicoLogicalModel__GetCurrentCanvas();
 
 		/**
 		 * The meta object literal for the '{@link ca.umontreal.iro.calico.Database.impl.EdgeImpl <em>Edge</em>}' class.

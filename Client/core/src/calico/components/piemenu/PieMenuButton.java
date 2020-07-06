@@ -30,8 +30,10 @@ package calico.components.piemenu;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.FileNotFoundException;
 import java.net.URL;
 
+import edu.mit.csail.sdg.alloy4.Err;
 import edu.umd.cs.piccolo.nodes.*;
 import calico.*;
 import calico.components.*;
@@ -160,7 +162,7 @@ public class PieMenuButton
 //		System.out.println("//////////// Removing pie menu event handler");
 	}
 	
-	public void onReleased(InputEventInfo event)
+	public void onReleased(InputEventInfo event) throws Err, FileNotFoundException
 	{
 
 		BubbleMenu.isPerformingBubbleMenuAction =false;

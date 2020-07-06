@@ -181,7 +181,7 @@ public class Calico extends JFrame
 		return uuidlist.size();
 	}
 
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
 		/*
 		 * int pixel = (new Color(100,200,250)).getRGB(); int rp = (pixel & 0x00FF0000)>>16; int gp = (pixel &

@@ -81,6 +81,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_6Dv79HgwEeq-xaSln6lwdQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_6Dv79XgwEeq-xaSln6lwdQ"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_w1ffgLQvEeqYqNAvVTEL4g" type="3010" element="_w04bgLQvEeqYqNAvVTEL4g">
+              <styles xmi:type="notation:FontStyle" xmi:id="_w1ffgbQvEeqYqNAvVTEL4g" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_w1ffgrQvEeqYqNAvVTEL4g"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="__xhs4XSoEeq19pA4WrH3Jg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="__xhs4nSoEeq19pA4WrH3Jg"/>
           </children>
@@ -310,6 +314,14 @@
         <target xmi:type="ecore:EOperation" href="Database.ecore#//CalicoLogicalModel/toAlloyModel"/>
         <semanticElements xmi:type="ecore:EOperation" href="Database.ecore#//CalicoLogicalModel/toAlloyModel"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_6DqcYXgwEeq-xaSln6lwdQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_w04bgLQvEeqYqNAvVTEL4g" name="getCurrentCanvas()" tooltipText="getCurrentCanvas()">
+        <target xmi:type="ecore:EOperation" href="Database.ecore#//CalicoLogicalModel/getCurrentCanvas"/>
+        <semanticElements xmi:type="ecore:EOperation" href="Database.ecore#//CalicoLogicalModel/getCurrentCanvas"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_w063wLQvEeqYqNAvVTEL4g" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>

@@ -218,6 +218,16 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getCalicoLogicalModel__GetCurrentCanvas() {
+		return calicoLogicalModelEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEdge() {
 		return edgeEClass;
 	}
@@ -408,6 +418,7 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		calicoLogicalModelEClass = createEClass(CALICO_LOGICAL_MODEL);
 		createEReference(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL__CANVAS);
 		createEOperation(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL___TO_ALLOY_MODEL);
+		createEOperation(calicoLogicalModelEClass, CALICO_LOGICAL_MODEL___GET_CURRENT_CANVAS);
 
 		edgeEClass = createEClass(EDGE);
 		createEAttribute(edgeEClass, EDGE__EDGE);
@@ -476,6 +487,8 @@ public class DatabasePackageImpl extends EPackageImpl implements DatabasePackage
 		initEReference(getCalicoLogicalModel_Canvas(), this.getCanvas(), null, "canvas", null, 0, -1, CalicoLogicalModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getCalicoLogicalModel__ToAlloyModel(), theXMLTypePackage.getString(), "toAlloyModel", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getCalicoLogicalModel__GetCurrentCanvas(), null, "getCurrentCanvas", 1, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(edgeEClass, Edge.class, "Edge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEdge_Edge(), this.getCConnector(), "edge", "", 0, 1, Edge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

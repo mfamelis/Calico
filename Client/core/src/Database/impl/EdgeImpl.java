@@ -217,9 +217,7 @@ public class EdgeImpl extends NamedElementImpl implements Edge {
 	 */
 	@Override
 	public long getUUID() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.edge.getUUID();
 	}
 
 	/**

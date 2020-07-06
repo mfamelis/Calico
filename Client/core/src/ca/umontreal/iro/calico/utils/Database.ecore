@@ -10,6 +10,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CalicoLogicalModel">
     <eOperations name="toAlloyModel" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eOperations name="getCurrentCanvas" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="canvas" upperBound="-1"
         eType="#//Canvas" containment="true"/>
   </eClassifiers>

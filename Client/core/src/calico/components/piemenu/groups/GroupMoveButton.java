@@ -31,6 +31,7 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.FileNotFoundException;
 
 import calico.CalicoDataStore;
 import calico.components.CCanvas;
@@ -40,6 +41,7 @@ import calico.controllers.CCanvasController;
 import calico.controllers.CGroupController;
 import calico.controllers.CStrokeController;
 import calico.inputhandlers.InputEventInfo;
+import edu.mit.csail.sdg.alloy4.Err;
 
 public class GroupMoveButton extends PieMenuButton
 {
@@ -126,7 +128,7 @@ public class GroupMoveButton extends PieMenuButton
 		ev.stop();
 	}
 	
-	public void onReleased(InputEventInfo ev)
+	public void onReleased(InputEventInfo ev) throws FileNotFoundException, Err
 	{
 		if (BubbleMenu.highlightedParentGroup != 0l)
 		{

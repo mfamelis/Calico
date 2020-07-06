@@ -5,7 +5,8 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Database.ecore</foreignModel>
-  <genPackages prefix="Database" disposableProviderFactory="true" ecorePackage="Database.ecore#/">
+  <genPackages prefix="Database" basePackage="ca.umontreal.iro.calico" disposableProviderFactory="true"
+      ecorePackage="Database.ecore#/">
     <genDataTypes ecoreDataType="Database.ecore#//CGroup"/>
     <genDataTypes ecoreDataType="Database.ecore#//CConnector"/>
     <genDataTypes ecoreDataType="Database.ecore#//CCanvas"/>
@@ -16,6 +17,7 @@
     <genClasses ecoreClass="Database.ecore#//CalicoLogicalModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Database.ecore#//CalicoLogicalModel/canvas"/>
       <genOperations ecoreOperation="Database.ecore#//CalicoLogicalModel/toAlloyModel"/>
+      <genOperations ecoreOperation="Database.ecore#//CalicoLogicalModel/getCurrentCanvas"/>
     </genClasses>
     <genClasses ecoreClass="Database.ecore#//Edge">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Database.ecore#//Edge/edge"/>

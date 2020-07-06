@@ -12,6 +12,7 @@ import Database.DatabaseFactory;
 import Database.Edge;
 import Database.Node;
 import calico.Calico;
+import calico.CalicoOptions.pen.debug;
 import calico.components.CCanvas;
 import calico.components.CConnector;
 import calico.components.CGroup;
@@ -151,6 +152,8 @@ public class CCalicoDbUdem  {
 
         
         PrimSig node = new PrimSig("Node", Attr.ABSTRACT);
+        
+        PrimSig edge = new PrimSig("Edges", Attr.ABSTRACT);
        
         // abstract sig Canvas {}
         PrimSig canvas = new PrimSig("Canvas", Attr.ABSTRACT);
@@ -158,7 +161,11 @@ public class CCalicoDbUdem  {
         // Canvas { nodes: Node }
         Expr nodes = canvas.addField("nodes", node.setOf());
         
-        Expr edges = canvas.addField("edges", nodes.any_arrow_some(nodes).setOf());
+        Expr edges = canvas.addField("edges", edge.setOf());
+        
+        Expr src = edge.addField("src", node.setOf());
+        
+        Expr trgt = edge.addField("trgt", node.setOf());
         
         Canvas curCanvas = clm.getCanvas().get(clm.getCanvas().size()-1);
         
@@ -172,49 +179,95 @@ public class CCalicoDbUdem  {
         
         PrimSig canvas1 = new PrimSig("Canvas1", canvas, Attr.ONE);
         
-        Expr x = listSigNode.get(0);
         
-        for (int i=1; i<listSigNode.size(); i++)
+        
+        //Expr x = listSigNode.get(0);
+        
+        for (int i=0; i<listSigNode.size(); i++)
         {
-        	x.plus(listSigNode.get(i));
+        	Expr x1 = listSigNode.get(i);
+        	System.out.print(listSigNode.get(i));
+        	//x.plus(x1);
+        	canvas1.addFact(canvas1.join(nodes).equal(x1));
         }
-        System.out.print(x);
-        canvas1.addFact(canvas1.join(nodes).equal(x));
+        //System.out.print(x);
+        //canvas1.addFact(canvas1.join(nodes).equal(x));
         
         
-        Node src = curCanvas.getEdge().get(0).getSrc();
-        Node trg = curCanvas.getEdge().get(0).getTarget();
+       /* Node src1 = curCanvas.getEdge().get(0).getSrc();
+        Node trg1 = curCanvas.getEdge().get(0).getTarget();
+        String labelSrc = ("Node_"+src1.getNode().getUUID()).toString();
+		String labeltrg = ("Node_"+trg1.getNode().getUUID()).toString();
         int is=0,it=0;
-		for (int i=0; i<listSigNode.size()-1; i++)
+        
+		for (int i=0; i<listSigNode.size(); i++)
         {
-        	if(listSigNode.get(i).label == "Node_"+src.getNode().getUUID())
+			String LabelPointer = (listSigNode.get(i).label).toString();
+        	if(labelSrc.equals(LabelPointer))
         		is=i;
-        	if(listSigNode.get(i).label == "Node_"+trg.getNode().getUUID())
+        	if(labeltrg.equals(LabelPointer))
         		it=i;
-        	
         }
         
         
-        Expr y = listSigNode.get(is).one_arrow_one(listSigNode.get(it));
+        Expr s = listSigNode.get(is);
+        Expr t = listSigNode.get(it);
+        edge1.addFact(edge1.join(src).equal(s));
+        edge1.addFact(edge1.join(trgt).equal(t));
+        canvas1.addFact(canvas1.join(edges).equal(edge1));*/
         
-        for (int i=1; i<curCanvas.getEdge().size(); i++)
+        
+       
+        
+        for (int i=0; i<curCanvas.getEdge().size(); i++)
         {
+        	PrimSig edge1 = new PrimSig("Edge_"+curCanvas.getEdge().get(i).getUUID(), edge, Attr.ONE);
         	Node srctmp = curCanvas.getEdge().get(i).getSrc();
             Node trgtmp = curCanvas.getEdge().get(i).getTarget();
-            int istmp=0,ittmp=0;
-    		for (int j=0; j<listSigNode.size()-1; j++)
+            String labelSrcTmp = ("Node_"+srctmp.getNode().getUUID()).toString();
+    		String labelTrgTmp = ("Node_"+trgtmp.getNode().getUUID()).toString();
+            int istmp=0,ittmp=0,itest=0;
+    		for (int j=0; j<listSigNode.size(); j++)
             {
-            	if(listSigNode.get(j).label == "Node_"+srctmp.getNode().getUUID())
-            		istmp=j;
-            	if(listSigNode.get(j).label == "Node_"+trgtmp.getNode().getUUID())
-            		ittmp=j;
+    			
+    			String LabelPointerTmp = (listSigNode.get(j).label).toString();
+            	if(labelSrcTmp.equals(LabelPointerTmp))
+            		{
+            			itest=itest+1;
+            			istmp=j;
+            			//s.plus(listSigNode.get(istmp));
+            			edge1.addFact(edge1.join(src).equal(listSigNode.get(istmp)));
+            		}
+            	if(labelTrgTmp.equals(LabelPointerTmp))
+            		{
+            			itest=itest+1;
+            			ittmp=j;
+            			//t.plus(listSigNode.get(ittmp));
+            			edge1.addFact(edge1.join(trgt).equal(listSigNode.get(ittmp)));
+            		}
             	
+            	if(itest==2)
+            	{
+            		itest=0;
+                	canvas1.addFact(canvas1.join(edges).equal(edge1));
+	
+            	}
+                
+                //edge1.addFact(edge1.join(src).equal(s));
+                //edge1.addFact(edge1.join(trgt).equal(t));
+                
+                            	
             }
+    		
+    		
+    		
         	
-        	y.plus(listSigNode.get(istmp).one_arrow_one(listSigNode.get(ittmp)));
+        	
         	
         }
-        canvas1.addFact(canvas1.join(edges).equal(y));
+        
+        //canvas1.addFact(canvas1.join(edges).equal(edge1));
+        
         Expr r = edges;
         
         //Acyclic

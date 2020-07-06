@@ -34,6 +34,7 @@ import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,6 +56,7 @@ import calico.controllers.CGroupController;
 import calico.controllers.CStrokeController;
 import calico.inputhandlers.InputEventInfo;
 import calico.perspectives.CalicoPerspective;
+import edu.mit.csail.sdg.alloy4.Err;
 import edu.umd.cs.piccolo.activities.PActivity;
 import edu.umd.cs.piccolo.util.PBounds;
 
@@ -604,7 +606,7 @@ public class BubbleMenu {
 	}
 	
 	//Pass the event to the button
-	public static void handleButtonInput(Point point, InputEventInfo ev)
+	public static void handleButtonInput(Point point, InputEventInfo ev) throws FileNotFoundException, Err
 	{		
 		if(buttonList.size()==0)
 		{

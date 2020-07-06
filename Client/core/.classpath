@@ -27,5 +27,6 @@
 	<classpathentry kind="lib" path="/Users/bechirbelkahla/Downloads/imgscalr-lib-4.2.jar"/>
 	<classpathentry kind="lib" path="/Users/bechirbelkahla/Downloads/jpen-2-150301/jpen-2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/Users/bechirbelkahla/Downloads/alloy4.2_2015-02-22.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

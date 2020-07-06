@@ -31,6 +31,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
+import java.io.FileNotFoundException;
 
 import calico.*;
 import calico.components.*;
@@ -55,6 +56,7 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 
 import ca.umontreal.iro.calico.utils.CCalicoDbUdem;
+import edu.mit.csail.sdg.alloy4.Err;
 import edu.umd.cs.piccolo.PNode;
 import edu.umd.cs.piccolo.nodes.PImage;
 
@@ -365,8 +367,10 @@ public class CalicoInputManager
 	/**
 	 * This reroutes the action to the appropriate handler
 	 * @param ev
+	 * @throws Err 
+	 * @throws FileNotFoundException 
 	 */
-	public static void handleInputFromQueue(InputEventInfo ev)
+	public static void handleInputFromQueue(InputEventInfo ev) throws FileNotFoundException, Err
 	{
 		handleDeviceInput(ev);
 		/*
@@ -382,7 +386,7 @@ public class CalicoInputManager
 		*/
 	}
 
-	public static void handleDeviceInput(InputEventInfo ev)
+	public static void handleDeviceInput(InputEventInfo ev) throws FileNotFoundException, Err
 	{
 		//Prevent all inputs if the input manager is disabled
 		//The input manager can only be disabled for 5 seconds at a time. This prevents the entire
